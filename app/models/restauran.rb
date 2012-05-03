@@ -22,6 +22,14 @@ class Restauran < ActiveRecord::Base
     def by_cuisine(id)
       where :cuisine_id => id 
     end
+
+    def by_name(q)
+      fulltext q, [:name]
+    end
+
+    def by_keywords(q)
+      fulltext q, [:keywords]
+    end
   end
 
 end

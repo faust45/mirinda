@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-  has_scope :fulltext, :as => :name
+  has_scope :by_name
+  has_scope :by_keywords
   has_scope :by_zip
   has_scope :by_cuisine
 
