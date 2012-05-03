@@ -9,7 +9,7 @@ module BaseModel
         end
       end
 
-      where(["#{self.table_name}.id IN (?)", ids])
+      where(:id => ids)
     end
   end
 
