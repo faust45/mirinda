@@ -1,0 +1,31 @@
+<h1>Crazy search...</h1>
+
+<%= form_for :search, :method => "POST" do |f| %>
+  <div>
+    <label>zip:</label>
+    <%= select_tag "by_zip", options_for_select(zip_options), :include_blank => true %>
+
+    <label>cuisine:</label>
+    <%= select_tag "by_cuisine", options_for_select(cuisines_options), :include_blank => true %>
+  </div>
+  <br />
+
+  <div>
+    <label>name:</label>
+    <%= text_field_tag "name" %>
+    or
+    <label>keywords:</label>
+    <%= text_field_tag "keywords" %>
+  </div>
+
+  <input type="submit" value="go" />
+<% end %>
+
+<div>
+  <ul>
+    <% @restaurants.each do |r| %>
+      <li><%= r %></li>
+    <% end %>
+  </ul>
+
+</div>
